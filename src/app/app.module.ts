@@ -18,6 +18,9 @@ import { ConsultComponent } from './pages/consult/consult.component';
 import { ExamEditComponent } from './pages/exam/exam-edit/exam-edit.component';
 import { SpecialtyEditComponent } from './pages/specialty/specialty-edit/specialty-edit.component';
 import { ExamDialogComponent } from './pages/exam/exam-dialog/exam-dialog.component';
+import { ConsultAutocompleteComponent } from './pages/consult-autocomplete/consult-autocomplete.component';
+import { ConsultWizardComponent } from './pages/consult-wizard/consult-wizard.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ExamDialogComponent } from './pages/exam/exam-dialog/exam-dialog.compon
     ConsultComponent,
     ExamEditComponent,
     SpecialtyEditComponent,
-    ExamDialogComponent
+    ExamDialogComponent,
+    ConsultAutocompleteComponent,
+    ConsultWizardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

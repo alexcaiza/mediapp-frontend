@@ -1,0 +1,16 @@
+<mat-toolbar>Consult Register 2</mat-toolbar>
+
+<form class="example-container" [formGroup]="form" (submit)="save()">
+  <mat-form-field>
+    <input type="text" placeholder="Patient" matInput [matAutocomplete]="autoPatient"
+    [formControl]="patientControl" formControlName="patient">
+
+    <mat-autocomplete #autoPatient="matAutocomplete" [displayWith]="showPatient">
+        <mat-option *ngFor="let p of patientsFiltered$ | async" [value]="p">
+            {{p.firstName}} {{p.lastName}}
+        </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+</form>
