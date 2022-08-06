@@ -21,6 +21,7 @@ import { ExamDialogComponent } from './pages/exam/exam-dialog/exam-dialog.compon
 import { ConsultAutocompleteComponent } from './pages/consult-autocomplete/consult-autocomplete.component';
 import { ConsultWizardComponent } from './pages/consult-wizard/consult-wizard.component';
 import { SearchComponent } from './pages/search/search.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { SearchComponent } from './pages/search/search.component';
     ExamDialogComponent,
     ConsultAutocompleteComponent,
     ConsultWizardComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,8 @@ import { SearchComponent } from './pages/search/search.component';
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule, //para uso de forms
-    FormsModule //para two-way binding
+    FormsModule, //para two-way binding
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
