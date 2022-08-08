@@ -22,6 +22,8 @@
     "@angular/router": "^14.0.0",
     "@angular/flex-layout": "^14.0.0-beta.40",
     "moment": "^2.29.4",
+    "chart.js": "^2.9.4",
+    "ng2-pdf-viewer": "^9.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -22,6 +22,8 @@ export class PatientComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  totalElements: number;
+
   constructor(
     private patientService: PatientService,
     private snackBar: MatSnackBar
@@ -38,16 +40,22 @@ export class PatientComponent implements OnInit {
       this.snackBar.open(data, 'INFO', { duration: 2000, verticalPosition: "bottom", horizontalPosition: "center", panelClass: 'snackbar' });
     });
 
+    /*
     this.patientService.findAll().subscribe(data => {
+      this.createTable(data);
+    });
+    */
+
+    this.patientService.listPageable(0, 5).subscribe(data => {
       this.createTable(data);
     });
   }
 
-  createTable(patients: Patient[]){
-    this.patients = patients;
-    this.dataSource = new MatTableDataSource(patients);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  createTable(patients: any){
+    this.dataSource = new MatTableDataSource(patients.content);
+    this.totalElements = patients.totalElements;
+    //this.dataSource.paginator = this.paginator;
+    //this.dataSource.sort = this.sort;
   }
 
   applyFilter(e: any) {
@@ -65,4 +73,7 @@ export class PatientComponent implements OnInit {
     ;
   }
 
+  showMore(e: any){
+    this.patientService.listPageable(e.pageIndex, e.pageSize).subscribe(data => this.createTable(data));
+  }
 }

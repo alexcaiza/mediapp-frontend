@@ -22,6 +22,9 @@ import { ConsultAutocompleteComponent } from './pages/consult-autocomplete/consu
 import { ConsultWizardComponent } from './pages/consult-wizard/consult-wizard.component';
 import { SearchComponent } from './pages/search/search.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReportComponent } from './pages/report/report.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SearchDialogComponent } from './pages/search/search-dialog/search-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ConsultAutocompleteComponent,
     ConsultWizardComponent,
     SearchComponent,
+    ReportComponent,
+    SearchDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     ReactiveFormsModule, //para uso de forms
     FormsModule, //para two-way binding
-    FlexLayoutModule
+    FlexLayoutModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
